@@ -1,0 +1,20 @@
+{% extends 'poster/base.html' %}
+
+{% block menu %}
+{% for m in menu %}
+<a class="nav__link" href="{% url m.url_name %}">{{m.title}}</a>
+{% endfor %}
+{% endblock menu %}
+
+{% block content %}
+<h2 class="intro__suptitle">Favorite Screen</h2>
+<h1 class="intro__title">Welcome To DJ-Cinema</h1>
+{% for c in cinemas %}
+<div class="content__info">
+    <p>{{c.name}}</p>
+    <p>Район: {{c.district}}</p>
+    <p>Адрес: {{c.address}}</p>
+    <p>Телефон для связи: {{c.numbers}}</p>
+</div>
+{% endfor %}
+{% endblock content %}

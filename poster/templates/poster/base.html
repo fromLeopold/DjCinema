@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DJ-Cinema</title>
+    <link type="text/css" href="{% static 'poster/css/base_style.css' %}" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="header">
+    <div class="container">
+        <div class="header__inner">
+            <div class="header__logo">DJ-Cinema</div>
+
+            <nav>
+                {% block menu %}
+                {% endblock menu %}
+            </nav>
+        </div>
+    </div>
+</header>
+
+<div class="intro">
+    <div class="container">
+        <div class="intro__inner">
+            {% block content %}
+            {% endblock content %}
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

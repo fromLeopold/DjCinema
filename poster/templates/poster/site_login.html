@@ -1,0 +1,18 @@
+{% extends 'poster/base.html' %}
+
+{% block menu %}
+{% for m in menu %}
+<a class="nav__link" href="{% url m.url_name %}">{{m.title}}</a>
+{% endfor %}
+{% endblock menu %}
+
+{% block content %}
+<div class="form">
+    <form class="form__inner" method ='post'>
+        <h1 class="form__title">Log in</h1>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="form__button"> Log in</button>
+    </form>
+</div>
+{% endblock content %}
